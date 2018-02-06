@@ -81,16 +81,20 @@ WSGI_APPLICATION = 'TriviaMundial.wsgi.application'
 #    }
 #}
 
+#DATABASES = {
+#
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'mundialrusiaapp',
+#        'USER': 'postgres',
+#        'PASSWORD': '123456789',
+#        'HOST': '127.0.0.1',
+#        'PORT': '5432',
+#    }
+#}
+
 DATABASES = {
-#    'default': dj_database_url.config()
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mundialrusiaapp',
-        'USER': 'postgres',
-        'PASSWORD': '123456789',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.config()
 }
 
 
@@ -142,3 +146,8 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
