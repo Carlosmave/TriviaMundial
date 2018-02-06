@@ -50,7 +50,8 @@ def processing(request, option, id, ttlscore):
     #answer = answers.objects.get(id=id)
     playeranswer=option
     objanswer = answers.objects.get(id=id)
-    correctanswer = objanswer.answer.replace(" ", "")
+    preanswer = objanswer.answer.replace(" ", "")
+    correctanswer = preanswer.replace(",", "")
     #correctanswer.replace(" ", "")
     questionscore = objanswer.score
 
