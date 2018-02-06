@@ -25,7 +25,7 @@ SECRET_KEY = 'ta9_p7e3ub4ceb_ujn$8cw)cu(a=9#ekmmi*kna(qdsu-f^-wd'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['triviamundial.herokuapp.com']
 
 
 # Application definition
